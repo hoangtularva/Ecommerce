@@ -232,23 +232,11 @@ Version:1.0
 .quickview-content .size .title {
 	margin-top: 16px;
 }
-.midium-banner .single-banner .content {
-	padding: 35px;
-}
-.midium-banner .single-banner h3 {
-	font-size: 20px;
-	line-height: 24px;
-}
-.midium-banner .single-banner a {
-	padding: 6px 20px;
-	margin-top: 15px;
-}
+
 .most-popular .single-product {
 	margin: 20px 15px 0 15px;
 }
-.shop-home-list .shop-section-title {
-	margin-top: 20px;
-}
+
 .cown-down {
 	height: auto;
 }
@@ -635,9 +623,7 @@ Version:1.0
 .hero-area4 .owl-carousel .owl-nav {
 	margin-top: -16px;
 }
-.product-area .nav-tabs .nav-item {
-	margin-bottom: 10px;
-}
+
 .small-banner {
 	padding: 18px 0;
 	
@@ -654,31 +640,11 @@ Version:1.0
 .quickview-content .size .title {
 	margin-top: 16px;
 }
-.midium-banner .single-banner .content {
-	padding: 35px;
-}
-.midium-banner .single-banner{
-	margin-bottom:15px;
-}
-.midium-banner .single-banner h3 {
-	font-size: 20px;
-	line-height: 24px;
-}
-.midium-banner .single-banner a {
-	padding: 6px 20px;
-	margin-top: 15px;
-}
+
 .most-popular .single-product {
 	margin: 20px 15px 0 15px;
 }
-.shop-home-list .shop-section-title {
-	margin-top: 20px;
-}
-.shop-home-list .single-list .content {
-	padding: 0;
-	padding: 20px;
-	text-align: center;
-}
+
 .shop.single .product-des .size {
 	margin-top: 10px;
 }
@@ -1293,9 +1259,7 @@ Version:1.0
 .hero-area3 .small-content .button .btn {
 	font-size: 12px;
 }
-.product-area .nav-tabs .nav-item {
-	margin-bottom: 10px;
-}
+
 .small-banner {
 	padding: 18px 0;
 	
@@ -1316,35 +1280,11 @@ Version:1.0
 	margin-top: 15px;
 	font-size: 11px;
 }
-.midium-banner .single-banner .content {
-	padding: 15px 10px 10px 30px;
-}
-.midium-banner .single-banner{
-	margin-bottom:15px;
-}
-.midium-banner .single-banner h3 {
-	font-size: 17px;
-	line-height: 22px;
-}
-.midium-banner .single-banner a {
-	padding: 5px 20px;
-	margin-top: 15px;
-	font-size: 12px;
-}
+
 .most-popular .single-product {
 	margin: 20px 15px 0 15px;
 }
-.shop-home-list{
-	padding-top:0;
-}
-.shop-home-list .shop-section-title {
-	margin-top: 20px;
-}
-.shop-home-list .single-list .content {
-	padding: 0;
-	padding: 20px;
-	text-align: center;
-}
+
 .cown-down {
 	height: auto;
 }
