@@ -1,10 +1,15 @@
 import React from 'react';
 import data from './data';
+// Link route
+import {BrowserRouter, Route} from 'react-router-dom'
 import './App.css';
+//Link screen
+import HomeScreen from './Screens/HomeScreen'
+import ProductScreen from './Screens/ProductScreen'
 
 function App() {
   return (
-
+    <BrowserRouter>
     <div>
    
         {/* Header */}
@@ -247,7 +252,7 @@ function App() {
                     <div className="row">
                       <div className="col-lg-7 col-12">
                         <div className="hero-text">
-                          <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
+                          <h1><span>UP TO 50% OFF </span>Balo Summer</h1>
                           <div className="button">
                             <a href="#" className="btn">Shop Now!</a>
                           </div>
@@ -318,6 +323,10 @@ function App() {
               </div>
             </div>
           </div>
+          
+          <Route path="/" exact={true} component={HomeScreen}/>
+          <Route path="/products/:id" component={ProductScreen}/>
+
           <div className="row">
             <div className="col-12">
               <div className="product-info">
@@ -509,8 +518,8 @@ function App() {
       </footer>
       {/* /End Footer Area */}
 
-      </div>
-    
+    </div>
+    </BrowserRouter>
   )
 }
 
