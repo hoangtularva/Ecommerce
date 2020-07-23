@@ -20,7 +20,7 @@ export default {
             name: "Balo laptop Mikkor The Kalino",
             image: "/images/3.jpg",
             price: 30,
-            brand: "Adidas",
+            brand: "Crumpler",
             rating: 4,
             numReviews: 16
         },
@@ -28,7 +28,7 @@ export default {
             name: "Balo Bestlife Elegant",
             image: "/images/4.jpg",
             price: 40,
-            brand: "Adidas",
+            brand: "Crumpler",
             rating: 5,
             numReviews: 10 
         },
@@ -52,7 +52,7 @@ export default {
             name: "Balo Sakos Cyber",
             image: "/images/7.jpg",
             price: 60,
-            brand: "Nike",
+            brand: "Jansport",
             rating: 3.5,
             numReviews: 24
         },
@@ -60,7 +60,7 @@ export default {
             name: "Balo Mikkor The Irvin",
             image: "/images/8.jpg",
             price: 57,
-            brand: "Nike",
+            brand: "Jansport",
             rating: 4.8,
             numReviews: 20
         },

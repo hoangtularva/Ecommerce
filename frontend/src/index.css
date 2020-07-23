@@ -800,27 +800,7 @@
 	display:inline-block;
 	float:right;
 }
-.header.shop .sub-category {
-	background: #fff;
-	width: 220px;
-	position: absolute;
-	left: 238px;
-	top: 0;
-	z-index: 999999;
-	opacity: 0;
-	visibility: hidden;
-	-webkit-transition: all 0.4s ease;
-	-moz-transition: all 0.4s ease;
-	transition: all 0.4s ease;
-	border-left: 3px solid #F7941D;
-	-webkit-box-shadow: 0px 5px 15px #0000000a;
-	-moz-box-shadow: 0px 5px 15px #0000000a;
-	box-shadow: 0px 5px 15px #0000000a;
-}
-.header.shop .main-category li:hover .sub-category{
-	opacity:1;
-	visibility:visible;
-}
+
 .header.shop .main-category li a{
 	text-transform:capitalize;
 	font-weight:400;
