@@ -1,10 +1,3 @@
-/* =====================================
-Template Name: Eshop
-Author Name: Naimur Rahman
-Author URI: http://www.wpthemesgrid.com/
-Description: Eshop - eCommerce HTML5 Template.
-Version:1.0
-========================================*/
 /*======================================
 [ CSS Table of contents ]
 01. Preloader CSS
@@ -1214,15 +1207,13 @@ Version:1.0
 }
 .hero-slider .single-slider {
 	height: auto;
-	background-image: url('https://via.placeholder.com/1900x700');
+	background-image: url('/images/banner.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
     height: 510px;
 }
-.hero-slider .text-inner {
-	
-}
+
 .hero-slider .hero-text {
 	padding: 0 30px;
 	margin-top:100px;
@@ -1322,7 +1313,7 @@ Version:1.0
 .hero-area2 .single-slider .content .des{
 	color:#fff;
 }
-.hero-area2 .single-slider .content .button{}
+
 .hero-area2 .single-slider .content .button .btn {
 	padding: 9px 25px;
 	border: 2px solid #fff;
@@ -2028,9 +2019,7 @@ Version:1.0
 .shop-sidebar .categor-list {
 	margin-top: 10px;
 }
-.shop-sidebar .categor-list li{
-	
-}
+
 .shop-sidebar .categor-list li {
 	margin-bottom: 10px;
 }
@@ -2124,7 +2113,6 @@ Version:1.0
 	margin: 4px 5px 0 0;
 	font-weight:500;
 }
-.shop .single-shorter option{}
 .shop .nice-select {
 	clear: initial;
 	display: inline-block;
@@ -2277,7 +2265,7 @@ Version:1.0
 .shop.single .product-des .product-buy {
 	margin-top: 40px;
 }
-.shop.single .product-des .product-buy{}
+
 .shop.single .product-des .color {
 	display: inline-block;
 	margin-right: 50px;
@@ -2499,9 +2487,7 @@ Version:1.0
 	color:#fff;
 	border-color:transparent;
 }
-.shop.single .tab-single {
-	
-}
+
 .shop.single .single-des {
 	margin-top:35px;
 }
@@ -2511,7 +2497,7 @@ Version:1.0
 	font-size:22px;
 	
 }
-.shop.single .single-des ul{}
+
 .shop.single .single-des ul li {
 	color: #555;
 	display: block;
@@ -2529,19 +2515,16 @@ Version:1.0
 	background: #f7941d;
 	border-radius: 50%;
 }
-.shop.single .single-des p{}
 
 .shop.single .item-info {
 	width: 100%;
 }
-.shop.single .item-info tbody{}
-.shop.single .item-info tbody tr{}
+
 .shop.single .item-info tbody td {
 	border: 1px solid #e6e6e6;
 	padding: 10px;
 }
-.shop.single .item-info tbody strong{}
-.shop.single .ratting-main{}
+
 .shop.single .avg-ratting {
 	margin-bottom: 20px;
 }
@@ -2584,7 +2567,7 @@ Version:1.0
 	font-weight: 600;
 	line-height: 18px;
 }
-.shop.single .ratting-main .single-rating ul{}
+
 .shop.single .ratting-main .single-rating ul li{
 	display:inline-block;
 }
@@ -2651,7 +2634,7 @@ Version:1.0
 	font-size: 20px;
 	color: #333;
 }
-.shop.single .avg-ratting{}
+
 .shop.single .form .form-group input {
 	width: 100%;
 	height: 45px;
@@ -2756,9 +2739,7 @@ Version:1.0
 	-moz-transform:rotate(360deg);
 	transform:rotate(360deg);
 }
-.shopping-cart .border{
-	
-}
+
 .shopping-cart .table .remove-icon{
 	font-size:16px;
 }
@@ -2770,7 +2751,7 @@ Version:1.0
 .shopping-summery tbody .price {
 	text-align: center;
 }
-.shopping-summery tbody .price span{}
+
 .shopping-cart tbody .qty .input-group {
 	width: 175px;
 	display: inline-block;
@@ -2826,9 +2807,7 @@ Version:1.0
 .shopping-cart .total-amount{
 	margin-top:50px;
 }
-.shopping-cart .total-amount .left{}
-.shopping-cart .total-amount .left .coupon{}
-.shopping-cart .total-amount .left .coupon form{}
+
 .shopping-cart .total-amount .left .coupon form input {
 	width: 220px;
 	display: inline-block;
@@ -2913,9 +2892,7 @@ Version:1.0
 .shopping-cart .total-amount .right {
 	padding-left: 100px;
 }
-.shopping-cart .total-amount .right ul{
-	
-}
+
 .shopping-cart .total-amount .right ul li {
 	font-size: 15px;
 	font-weight: 400;
@@ -4658,7 +4635,7 @@ Version:1.0
 	font-size: 20px;
 	font-weight: 600;
 }
-.footer .links ul{}
+
 .footer .links ul li {
 	display: block;
 	margin-bottom: 8px;
@@ -4674,9 +4651,7 @@ Version:1.0
 	color:#F7941D;
 	padding-left:10px;
 }
-.footer .social{}
-.footer .social .contact{}
-.footer .social .contact ul{}
+
 .footer .social .contact ul li {
 	color: #fff;
 	display: block;
@@ -4705,9 +4680,6 @@ Version:1.0
 	color:#F7941D;
 }
 /* Copyright */
-.footer .copyright{
-	
-}
 .footer .copyright .inner{
 	border-top:1px solid #eeeeee3d;
 	padding:20px 0;

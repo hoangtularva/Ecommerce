@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import data from './data';
 import './App.css';
 
 function App() {
@@ -248,7 +248,6 @@ function App() {
                       <div className="col-lg-7 col-12">
                         <div className="hero-text">
                           <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
-                          <p>Maboriosam in a nesciung eget magnae <br /> dapibus disting tloctio in the find it pereri <br /> odiy maboriosm.</p>
                           <div className="button">
                             <a href="#" className="btn">Shop Now!</a>
                           </div>
@@ -327,12 +326,14 @@ function App() {
                   <div className="tab-pane fade show active" id="man" role="tabpanel">
                     <div className="tab-single">
                       <div className="row">
-                        <div className="col-xl-3 col-lg-4 col-md-4 col-12">
+                        {/* Render Product */}
+                        {
+                        data.products.map (product => <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                           <div className="single-product">
                             <div className="product-img">
                               <a href="product-details.html">
-                                <img className="default-img" src="https://via.placeholder.com/550x750" alt="#" />
-                                <img className="hover-img" src="https://via.placeholder.com/550x750" alt="#" />
+                                <img className="default-img" src= {product.image} alt="#" />
+                                <img className="hover-img" src= {product.image} alt="#" />
                               </a>
                               <div className="button-head">
                                 <div className="product-action">
@@ -346,99 +347,17 @@ function App() {
                               </div>
                             </div>
                             <div className="product-content">
-                              <h3><a href="product-details.html">Women Hot Collection</a></h3>
+                              <h3><a href="product-details.html">{product.name}</a></h3>
                               <div className="product-price">
-                                <span>$29.00</span>
+                                <span>{product.price}</span>
                               </div>
-                              <div class="product-brand">Nike</div>
-                              <div class="product-rating">4.5 Stars (10 Reviews)</div>
+                              <div class="product-brand">{product.brand}</div>
+                              <div class="product-rating">{product.rating} Stars ({product.numReviews})</div>
                             </div>
                           </div>
                         </div>
-                        <div className="col-xl-3 col-lg-4 col-md-4 col-12">
-                          <div className="single-product">
-                            <div className="product-img">
-                              <a href="product-details.html">
-                                <img className="default-img" src="https://via.placeholder.com/550x750" alt="#" />
-                                <img className="hover-img" src="https://via.placeholder.com/550x750" alt="#" />
-                              </a>
-                              <div className="button-head">
-                                <div className="product-action">
-                                  <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i className=" ti-eye" /><span>Quick Shop</span></a>
-                                  <a title="Wishlist" href="#"><i className=" ti-heart " /><span>Add to Wishlist</span></a>
-                                  <a title="Compare" href="#"><i className="ti-bar-chart-alt" /><span>Add to Compare</span></a>
-                                </div>
-                                <div className="product-action-2">
-                                  <a title="Add to cart" href="#">Add to cart</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="product-content">
-                              <h3><a href="product-details.html">Awesome Pink Show</a></h3>
-                              <div className="product-price">
-                                <span>$29.00</span>
-                              </div>
-                              <div class="product-brand">Nike</div>
-                              <div class="product-rating">4.5 Stars (10 Reviews)</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-4 col-12">
-                          <div className="single-product">
-                            <div className="product-img">
-                              <a href="product-details.html">
-                                <img className="default-img" src="https://via.placeholder.com/550x750" alt="#" />
-                                <img className="hover-img" src="https://via.placeholder.com/550x750" alt="#" />
-                              </a>
-                              <div className="button-head">
-                                <div className="product-action">
-                                  <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i className=" ti-eye" /><span>Quick Shop</span></a>
-                                  <a title="Wishlist" href="#"><i className=" ti-heart " /><span>Add to Wishlist</span></a>
-                                  <a title="Compare" href="#"><i className="ti-bar-chart-alt" /><span>Add to Compare</span></a>
-                                </div>
-                                <div className="product-action-2">
-                                  <a title="Add to cart" href="#">Add to cart</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="product-content">
-                              <h3><a href="product-details.html">Awesome Bags Collection</a></h3>
-                              <div className="product-price">
-                                <span>$29.00</span>
-                              </div>
-                              <div class="product-brand">Nike</div>
-                              <div class="product-rating">4.5 Stars (10 Reviews)</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-4 col-12">
-                          <div className="single-product">
-                            <div className="product-img">
-                              <a href="product-details.html">
-                                <img className="default-img" src="https://via.placeholder.com/550x750" alt="#" />
-                                <img className="hover-img" src="https://via.placeholder.com/550x750" alt="#" />
-                              </a>
-                              <div className="button-head">
-                                <div className="product-action">
-                                  <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i className=" ti-eye" /><span>Quick Shop</span></a>
-                                  <a title="Wishlist" href="#"><i className=" ti-heart " /><span>Add to Wishlist</span></a>
-                                  <a title="Compare" href="#"><i className="ti-bar-chart-alt" /><span>Add to Compare</span></a>
-                                </div>
-                                <div className="product-action-2">
-                                  <a title="Add to cart" href="#">Add to cart</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="product-content">
-                              <h3><a href="product-details.html">Polo Dress For Women</a></h3>
-                              <div className="product-price">
-                                <span>$29.00</span>
-                              </div>
-                              <div class="product-brand">Nike</div>
-                              <div class="product-rating">4.5 Stars (10 Reviews)</div>
-                            </div>
-                          </div>
-                        </div>
+                        )}
+
                       </div>
                     </div>
                   </div>
