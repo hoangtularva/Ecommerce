@@ -6,6 +6,7 @@ import './App.css';
 //Link screen
 import HomeScreen from './Screens/HomeScreen'
 import ProductScreen from './Screens/ProductScreen'
+import CartScreen from './Screens/CartSreen'
 
 function App() {
   return (
@@ -141,8 +142,9 @@ function App() {
         {/*/ End Header */}
 
         <Route path="/product/:id" component={ProductScreen}/>
+        <Route path="/cart/:id?" component={CartScreen}/>
         <Route path="/" exact={true} component={HomeScreen} />
-   
+
 
         {/* Start Shop Services Area */}
         <section className="shop-services section home">
