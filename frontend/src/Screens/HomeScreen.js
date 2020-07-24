@@ -1,28 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 //router-dom
 import { Link } from 'react-router-dom';
 //Link data
-import data from '../data'
+// import data from '../data'
+//import axios to request HTTP
+import axios from 'axios'
 
 function HomeScreen(props) {
+
+  //Fetch Server Data 
+  const [products, setProduct] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const {data} = await axios.get("/api/products");
+      setProduct(data);
+    }
+    fetchData();
+    return () => {
+      //
+    };
+  }, [])
+
   return (
     <div>
 
       {/* Slider Area */}
       <section className="hero-slider">
-          {/* Single Slider */}
-          <div className="single-slider">
-            <div className="container">
-              <div className="row no-gutters">
-                <div className="col-lg-9 offset-lg-3 col-12">
-                  <div className="text-inner">
-                    <div className="row">
-                      <div className="col-lg-7 col-12">
-                        <div className="hero-text">
-                          <h1><span>UP TO 50% OFF </span>Balo Summer</h1>
-                          <div className="button">
-                            <a href="#" className="btn">Shop Now!</a>
-                          </div>
+        {/* Single Slider */}
+        <div className="single-slider">
+          <div className="container">
+            <div className="row no-gutters">
+              <div className="col-lg-9 offset-lg-3 col-12">
+                <div className="text-inner">
+                  <div className="row">
+                    <div className="col-lg-7 col-12">
+                      <div className="hero-text">
+                        <h1><span>UP TO 50% OFF </span>Balo Summer</h1>
+                        <div className="button">
+                          <a href="#" className="btn">Shop Now!</a>
                         </div>
                       </div>
                     </div>
@@ -31,11 +46,12 @@ function HomeScreen(props) {
               </div>
             </div>
           </div>
-          {/*/ End Single Slider */}
-        </section>
-        {/*/ End Slider Area */}
+        </div>
+        {/*/ End Single Slider */}
+      </section>
+      {/*/ End Slider Area */}
 
-         {/* Start Small Banner  */}
+      {/* Start Small Banner  */}
       <section className="small-banner section">
         <div className="container-fluid">
           <div className="row">
@@ -69,7 +85,7 @@ function HomeScreen(props) {
         </div>
       </section>
       {/* End Small Banner */}
-      
+
       {/* Start Product Area */}
       <div className="product-area section">
         <div className="container">
@@ -91,10 +107,10 @@ function HomeScreen(props) {
                       <div className="row">
                         {/* Render Product */}
                         {
-                          data.products.map(product => <div className="col-xl-3 col-lg-4 col-md-4 col-12">
+                          products.map(product => <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                             <div className="single-product">
                               <div className="product-img">
-                                
+
                                 <Link to={'/product/' + product._id}>
                                   <img className="default-img" src={product.image} alt="#" />
                                   <img className="hover-img" src={product.image} alt="#" />
