@@ -107,7 +107,7 @@ function HomeScreen(props) {
                       <div className="row">
                         {/* Render Product */}
                         {
-                          products.map(product => <div className="col-xl-3 col-lg-4 col-md-4 col-12">
+                          products.map(product => <div key={product._id} className="col-xl-3 col-lg-4 col-md-4 col-12">
                             <div className="single-product">
                               <div className="product-img">
 
