@@ -750,15 +750,7 @@
 .header.shop .topbar p {
 	color: #333;
 }
-.header.shop .all-category {
-	color: #fff;
-	background: transparent;
-	position: relative;
-	background: #f7941d;
-}
-.header.shop .all-category h3{
-	padding: 20px 25px;
-}
+
 .header.shop .cat-heading {
 	font-size: 20px;
 	color: #fff;
@@ -1114,22 +1106,7 @@
 	width:100%;
 	z-index:999;
 }
-.header.sticky .all-category{}
-.header.sticky .all-category h3{
-	cursor:pointer;
-	
-}
-.header.sticky .all-category .main-category{
-	opacity:0;
-	visibility:hidden;
-	-webkit-transition:all 0.4s ease;
-	-moz-transition:all 0.4s ease;
-	transition:all 0.4s ease;
-}
-.header.sticky .all-category:hover .main-category{
-	opacity:1;
-	visibility:visible;
-}
+
 .header.sticky .header-inner .nav li a {
 	color: #333;
 }
@@ -1187,7 +1164,7 @@
 }
 .hero-slider .single-slider {
 	height: auto;
-	background-image: url('/images/banner.jpg');
+	background-image: url('https://saigonbalo.com/wp-content/uploads/2016/10/balo-laptop.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;

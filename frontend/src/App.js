@@ -1,7 +1,7 @@
 import React from 'react';
 import data from './data';
 // Link route
-import {BrowserRouter, Route} from 'react-router-dom'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 import './App.css';
 //Link screen
 import HomeScreen from './Screens/HomeScreen'
@@ -10,8 +10,8 @@ import ProductScreen from './Screens/ProductScreen'
 function App() {
   return (
     <BrowserRouter>
-    <div>
-   
+      <div>
+
         {/* Header */}
         <header className="header shop">
           {/* Topbar */}
@@ -50,7 +50,7 @@ function App() {
                 <div className="col-lg-2 col-md-2 col-12">
                   {/* Logo */}
                   <div className="logo">
-                    <a href="/"><img src="images/logo.png" alt="logo" /></a>
+                    <Link to="/"><img src="images/logo.png" alt="logo" /></Link>
                   </div>
                   {/*/ End Logo */}
                   {/* Search Form */}
@@ -103,39 +103,33 @@ function App() {
             <div className="container">
               <div className="cat-nav-head">
                 <div className="row">
-                  <div className="col-lg-3">
-                    <div className="all-category">
-                      <h3 className="cat-heading"><i className="fa fa-bars" aria-hidden="true" />CATEGORIES</h3>
-                      <ul className="main-category">
-                        <li><a href="#">Adidas</a></li>
-                        <li><a href="#">Nike</a></li>
-                        <li><a href="#">Jansport</a></li>
-                        <li><a href="#">Crumpler</a></li>
-                      </ul>
-                    </div>
-                  </div>
                   <div className="col-lg-9 col-12">
                     <div className="menu-area">
                       {/* Main Menu */}
                       <nav className="navbar navbar-expand-lg">
-                        <div className="navbar-collapse">	
-                          <div className="nav-inner">	
+                        <div className="navbar-collapse">
+                          <div className="nav-inner">
                             <ul className="nav main-menu menu navbar-nav">
-                              <li className="active"><a href="#">Home</a></li>											
-                              <li><a href="#">Service</a></li>
-                              <li><a href="#">Pages</a></li>									
-                              <li><a href="#">Blog<i className="ti-angle-down" /></a>
+                              <li className="active">
+                                <Link to="/">Home</Link>
+                              </li>
+                              <li><a href="#">Categories<i className="ti-angle-down" /></a>
                                 <ul className="dropdown">
-                                  <li><a href="blog-single-sidebar.html">Blog Single Sidebar</a></li>
+                                  <li><a href="#">Adidas</a></li>
+                                  <li><a href="#">Nike</a></li>
+                                  <li><a href="#">Jansport</a></li>
+                                  <li><a href="#">Crumpler</a></li>
                                 </ul>
                               </li>
+                              <li><a href="#">Service</a></li>
+                              <li><a href="#">Pages</a></li>
                               <li><a href="#">Carts</a></li>
-                              <li><a href="#">Checkout</a></li>		
+                              <li><a href="#">Checkout</a></li>
                             </ul>
                           </div>
                         </div>
                       </nav>
-                      {/*/ End Main Menu */}	
+                      {/*/ End Main Menu */}
                     </div>
                   </div>
                 </div>
@@ -145,226 +139,150 @@ function App() {
           {/*/ End Header Inner */}
         </header>
         {/*/ End Header */}
-        {/* Slider Area */}
-        <section className="hero-slider">
-          {/* Single Slider */}
-          <div className="single-slider">
+
+
+        <Route path="/" exact={true} component={HomeScreen} />
+        {/* <Route path="/products/:id" component={ProductScreen}/> */}
+
+        {/* Start Shop Services Area */}
+        <section className="shop-services section home">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-3 col-md-6 col-12">
+                {/* Start Single Service */}
+                <div className="single-service">
+                  <i className="ti-rocket" />
+                  <h4>Free shiping</h4>
+                  <p>Orders over $100</p>
+                </div>
+                {/* End Single Service */}
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                {/* Start Single Service */}
+                <div className="single-service">
+                  <i className="ti-reload" />
+                  <h4>Free Return</h4>
+                  <p>Within 30 days returns</p>
+                </div>
+                {/* End Single Service */}
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                {/* Start Single Service */}
+                <div className="single-service">
+                  <i className="ti-lock" />
+                  <h4>Sucure Payment</h4>
+                  <p>100% secure payment</p>
+                </div>
+                {/* End Single Service */}
+              </div>
+              <div className="col-lg-3 col-md-6 col-12">
+                {/* Start Single Service */}
+                <div className="single-service">
+                  <i className="ti-tag" />
+                  <h4>Best Peice</h4>
+                  <p>Guaranteed price</p>
+                </div>
+                {/* End Single Service */}
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* End Shop Services Area */}
+
+        {/* Start Footer Area */}
+        <footer className="footer">
+          {/* Footer Top */}
+          <div className="footer-top section">
             <div className="container">
-              <div className="row no-gutters">
-                <div className="col-lg-9 offset-lg-3 col-12">
-                  <div className="text-inner">
-                    <div className="row">
-                      <div className="col-lg-7 col-12">
-                        <div className="hero-text">
-                          <h1><span>UP TO 50% OFF </span>Balo Summer</h1>
-                          <div className="button">
-                            <a href="#" className="btn">Shop Now!</a>
-                          </div>
-                        </div>
-                      </div>
+              <div className="row">
+                <div className="col-lg-5 col-md-6 col-12">
+                  {/* Single Widget */}
+                  <div className="single-footer about">
+                    <div className="logo">
+                      <a href="index.html"><img src="images/logo2.png" alt="#" /></a>
+                    </div>
+                    <p className="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+                    <p className="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
+                  </div>
+                  {/* End Single Widget */}
+                </div>
+                <div className="col-lg-2 col-md-6 col-12">
+                  {/* Single Widget */}
+                  <div className="single-footer links">
+                    <h4>Information</h4>
+                    <ul>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Faq</a></li>
+                      <li><a href="#">Terms &amp; Conditions</a></li>
+                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="#">Help</a></li>
+                    </ul>
+                  </div>
+                  {/* End Single Widget */}
+                </div>
+                <div className="col-lg-2 col-md-6 col-12">
+                  {/* Single Widget */}
+                  <div className="single-footer links">
+                    <h4>Customer Service</h4>
+                    <ul>
+                      <li><a href="#">Payment Methods</a></li>
+                      <li><a href="#">Money-back</a></li>
+                      <li><a href="#">Returns</a></li>
+                      <li><a href="#">Shipping</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                  </div>
+                  {/* End Single Widget */}
+                </div>
+                <div className="col-lg-3 col-md-6 col-12">
+                  {/* Single Widget */}
+                  <div className="single-footer social">
+                    <h4>Get In Tuch</h4>
+                    {/* Single Widget */}
+                    <div className="contact">
+                      <ul>
+                        <li>NO. 342 - London Oxford Street.</li>
+                        <li>012 United Kingdom.</li>
+                        <li>info@eshop.com</li>
+                        <li>+032 3456 7890</li>
+                      </ul>
+                    </div>
+                    {/* End Single Widget */}
+                    <ul>
+                      <li><a href="#"><i className="ti-facebook" /></a></li>
+                      <li><a href="#"><i className="ti-twitter" /></a></li>
+                      <li><a href="#"><i className="ti-flickr" /></a></li>
+                      <li><a href="#"><i className="ti-instagram" /></a></li>
+                    </ul>
+                  </div>
+                  {/* End Single Widget */}
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* End Footer Top */}
+          <div className="copyright">
+            <div className="container">
+              <div className="inner">
+                <div className="row">
+                  <div className="col-lg-6 col-12">
+                    <div className="left">
+                      <p>Copyright © 2020 <a href="http://www.wpthemesgrid.com" target="_blank">Wpthemesgrid</a>  -  All Rights Reserved.</p>
+                    </div>
+                  </div>
+                  <div className="col-lg-6 col-12">
+                    <div className="right">
+                      <img src="images/payments.png" alt="#" />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          {/*/ End Single Slider */}
-        </section>
-        {/*/ End Slider Area */}
+        </footer>
+        {/* /End Footer Area */}
 
-         {/* Start Small Banner  */}
-      <section className="small-banner section">
-        <div className="container-fluid">
-          <div className="row">
-            {/* Single Banner  */}
-            <div className="col-lg-4 col-md-6 col-12">
-              <div className="single-banner">
-                <img src="https://www.mrvui.vn/Data/Sites/1/media/c%C3%A1c-h%C3%A3ng-balo-n%E1%BB%95i-ti%E1%BA%BFng/17-adidas-(3).jpg" alt="#" />
-              </div>
-            </div>
-            {/* /End Single Banner  */}
-            {/* Single Banner  */}
-            <div className="col-lg-4 col-md-6 col-12">
-              <div className="single-banner">
-                <img src="https://www.mrvui.vn/Data/Sites/1/media/c%C3%A1c-h%C3%A3ng-balo-n%E1%BB%95i-ti%E1%BA%BFng/c%C3%A1c-h%C3%A3ng-balo-n%E1%BB%95i-ti%E1%BA%BFng-(1).jpg" alt="#" />
-              </div>
-            </div>
-            {/* /End Single Banner  */}
-            {/* Single Banner  */}
-            <div className="col-lg-4 col-12">
-              <div className="single-banner tab-height">
-                <img src="https://www.mrvui.vn/Data/Sites/1/media/c%C3%A1c-h%C3%A3ng-balo-n%E1%BB%95i-ti%E1%BA%BFng/2-eastpak-(2).jpg" alt="#" />
-                <div className="content">
-                  <p>Flash Sale</p>
-                  <h3>Mid Season <br /> Up to <span>40%</span> Off</h3>
-                  <a href="#">Discover Now</a>
-                </div>
-              </div>
-            </div>
-            {/* /End Single Banner  */}
-          </div>
-        </div>
-      </section>
-      {/* End Small Banner */}
-
-      {/* Start Product Area */}
-      <div className="product-area section">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="section-title">
-                <h2>Products List</h2>
-              </div>
-            </div>
-          </div>
-          
-          <Route path="/" exact={true} component={HomeScreen}/>
-          {/* <Route path="/products/:id" component={ProductScreen}/> */}
-
-        </div>
       </div>
-      {/* End Product Area */}
-
-      {/* Start Shop Services Area */}
-      <section className="shop-services section home">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-3 col-md-6 col-12">
-              {/* Start Single Service */}
-              <div className="single-service">
-                <i className="ti-rocket" />
-                <h4>Free shiping</h4>
-                <p>Orders over $100</p>
-              </div>
-              {/* End Single Service */}
-            </div>
-            <div className="col-lg-3 col-md-6 col-12">
-              {/* Start Single Service */}
-              <div className="single-service">
-                <i className="ti-reload" />
-                <h4>Free Return</h4>
-                <p>Within 30 days returns</p>
-              </div>
-              {/* End Single Service */}
-            </div>
-            <div className="col-lg-3 col-md-6 col-12">
-              {/* Start Single Service */}
-              <div className="single-service">
-                <i className="ti-lock" />
-                <h4>Sucure Payment</h4>
-                <p>100% secure payment</p>
-              </div>
-              {/* End Single Service */}
-            </div>
-            <div className="col-lg-3 col-md-6 col-12">
-              {/* Start Single Service */}
-              <div className="single-service">
-                <i className="ti-tag" />
-                <h4>Best Peice</h4>
-                <p>Guaranteed price</p>
-              </div>
-              {/* End Single Service */}
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* End Shop Services Area */}
-
-
-       {/* Start Footer Area */}
-       <footer className="footer">
-        {/* Footer Top */}
-        <div className="footer-top section">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-5 col-md-6 col-12">
-                {/* Single Widget */}
-                <div className="single-footer about">
-                  <div className="logo">
-                    <a href="index.html"><img src="images/logo2.png" alt="#" /></a>
-                  </div>
-                  <p className="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-                  <p className="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
-                </div>
-                {/* End Single Widget */}
-              </div>
-              <div className="col-lg-2 col-md-6 col-12">
-                {/* Single Widget */}
-                <div className="single-footer links">
-                  <h4>Information</h4>
-                  <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Faq</a></li>
-                    <li><a href="#">Terms &amp; Conditions</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Help</a></li>
-                  </ul>
-                </div>
-                {/* End Single Widget */}
-              </div>
-              <div className="col-lg-2 col-md-6 col-12">
-                {/* Single Widget */}
-                <div className="single-footer links">
-                  <h4>Customer Service</h4>
-                  <ul>
-                    <li><a href="#">Payment Methods</a></li>
-                    <li><a href="#">Money-back</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Shipping</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                  </ul>
-                </div>
-                {/* End Single Widget */}
-              </div>
-              <div className="col-lg-3 col-md-6 col-12">
-                {/* Single Widget */}
-                <div className="single-footer social">
-                  <h4>Get In Tuch</h4>
-                  {/* Single Widget */}
-                  <div className="contact">
-                    <ul>
-                      <li>NO. 342 - London Oxford Street.</li>
-                      <li>012 United Kingdom.</li>
-                      <li>info@eshop.com</li>
-                      <li>+032 3456 7890</li>
-                    </ul>
-                  </div>
-                  {/* End Single Widget */}
-                  <ul>
-                    <li><a href="#"><i className="ti-facebook" /></a></li>
-                    <li><a href="#"><i className="ti-twitter" /></a></li>
-                    <li><a href="#"><i className="ti-flickr" /></a></li>
-                    <li><a href="#"><i className="ti-instagram" /></a></li>
-                  </ul>
-                </div>
-                {/* End Single Widget */}
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* End Footer Top */}
-        <div className="copyright">
-          <div className="container">
-            <div className="inner">
-              <div className="row">
-                <div className="col-lg-6 col-12">
-                  <div className="left">
-                    <p>Copyright © 2020 <a href="http://www.wpthemesgrid.com" target="_blank">Wpthemesgrid</a>  -  All Rights Reserved.</p>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-12">
-                  <div className="right">
-                    <img src="images/payments.png" alt="#" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-      {/* /End Footer Area */}
-
-    </div>
     </BrowserRouter>
   )
 }

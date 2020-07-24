@@ -87,9 +87,7 @@
 	height: auto;
 	font-size: 13px;
 }
-.header.shop .all-category {
-	display: none;
-}
+
 .navbar-nav {
 	display: inline-block !important;
 }
@@ -500,9 +498,7 @@
 	padding: 0 52px 0 20px;
 	width: 264px;
 }
-.header.shop .all-category {
-	display: none;
-}
+
 .header .header-inner{
 	display:none 
 }
@@ -1210,9 +1206,7 @@
 	padding: 0 52px 0 20px;
 	width: 264px;
 }
-.header.shop .all-category {
-	display: none;
-}
+
 .header .header-inner{
 	display:none 
 }
