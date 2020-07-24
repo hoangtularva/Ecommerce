@@ -1,0 +1,19 @@
+{
+  "name": "reactjs_project_fe2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangtularva/ReactJS_Project_FE2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoangtularva/ReactJS_Project_FE2/issues"
+  },
+  "homepage": "https://github.com/hoangtularva/ReactJS_Project_FE2#readme"
+}
