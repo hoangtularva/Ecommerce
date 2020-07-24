@@ -7,7 +7,8 @@ export default {
             price: 40,
             category: "Adidas",
             rating: 4.5,
-            numReviews: 9 
+            numReviews: 9,
+            countInStock: 0
         },
         {
             _id: "2",
@@ -16,7 +17,8 @@ export default {
             price: 55,
             category: "Adidas",
             rating: 5,
-            numReviews: 5 
+            numReviews: 5, 
+            countInStock: 1
         },
         {
             _id: "3",
@@ -25,7 +27,8 @@ export default {
             price: 30,
             category: "Crumpler",
             rating: 4,
-            numReviews: 16
+            numReviews: 16,
+            countInStock: 15 
         },
         {
             _id: "4",
@@ -34,7 +37,8 @@ export default {
             price: 40,
             category: "Crumpler",
             rating: 5,
-            numReviews: 10 
+            numReviews: 10, 
+            countInStock: 16 
         },
         {
             _id: "5",
@@ -43,7 +47,8 @@ export default {
             price: 49,
             category: "Nike",
             rating: 3.5,
-            numReviews: 20 
+            numReviews: 20,
+            countInStock: 11  
         },
         {
             _id: "6",
@@ -52,7 +57,8 @@ export default {
             price: 50,
             category: "Nike",
             rating: 4.7,
-            numReviews: 13
+            numReviews: 13,
+            countInStock: 5 
         },
         {
             _id: "7",
@@ -61,7 +67,8 @@ export default {
             price: 60,
             category: "Jansport",
             rating: 3.5,
-            numReviews: 24
+            numReviews: 24,
+            countInStock: 4 
         },
         {
             _id: "8",
@@ -70,7 +77,8 @@ export default {
             price: 57,
             category: "Jansport",
             rating: 4.8,
-            numReviews: 20
+            numReviews: 20,
+            countInStock: 1 
         },
     ]
 }

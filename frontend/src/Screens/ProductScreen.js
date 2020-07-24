@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 //import data from '../data'
 import { useSelector, useDispatch } from 'react-redux';
 import { detailsProduct } from '../actions/productActions';
@@ -7,6 +7,7 @@ function ProductScreen(props) {
     // const product = data.products.find(x => x._id === props.match.params.id);
 
     //Add redux
+    const [qty, setQty] = useState(1);
     const productDetails = useSelector((state) => state.productDetails);
     const { product, loading, error } = productDetails;
     const dispatch = useDispatch();
@@ -17,6 +18,10 @@ function ProductScreen(props) {
             //
         };
     }, [])
+
+    const handleAddToCart = () => {
+        props.history.push("/cart/" + props.match.params.id + "?qty=" + qty);
+    }
 
     return loading ?
         <div>{/* Preloader */}
@@ -57,7 +62,12 @@ function ProductScreen(props) {
                                         <a href="#"> ({product.numReviews} Reviews)</a>
                                     </div>
                                     <div className="quickview-stock">
-                                        <span><i className="fa fa-check-circle-o" /> in stock</span>
+                                        {product.countInStock > 0 ? 
+                                            <span><i className="fa fa-check-circle-o" /> in stock</span>
+                                            :
+                                            <span> out stock </span>
+                                        }
+                                       
                                     </div>
                                 </div>
                                 <h3>{product.price}</h3>
@@ -66,13 +76,17 @@ function ProductScreen(props) {
                                 </div>
 
                                 <div className="quantity">
-                                    Quantity: <select>
-                                        <option>1</option>
-                                        <option>2</option>
+                                    Quantity: <select value={qty} onChange={(e) => { setQty(e.target.value) }}>
+                                       {[...Array(product.countInStock).keys()].map(x=>
+                                            <option key={x + 1} value={x + 1 }>{x + 1}</option>
+                                        )}
                                     </select>
                                 </div>
                                 <div className="add-to-cart">
-                                    <a href="#" className="btn">Add to cart</a>
+                                    {product.countInStock > 0 &&
+                                        <a onClick={handleAddToCart} className="btn">Add to cart</a>
+                                    }
+
                                     <a href="#" className="btn min"><i className="ti-heart" /></a>
                                     <a href="#" className="btn min"><i className="fa fa-compress" /></a>
                                 </div>
