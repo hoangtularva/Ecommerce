@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/hoangtularva/ReactJS_Project_FE2/issues"
   },
-  "homepage": "https://github.com/hoangtularva/ReactJS_Project_FE2#readme"
+  "homepage": "https://github.com/hoangtularva/ReactJS_Project_FE2#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
