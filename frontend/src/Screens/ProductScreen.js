@@ -6,11 +6,11 @@ function ProductScreen(props) {
     return (
         <div>
 
-            <div className="row">
+            <div className="row no-gutters">
                 <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                     {/* Product Slider */}
                     <div className="product-gallery">
-                        <img src={product.image} alt="#" />
+                        <img className="img-fluid" src={product.image} alt="#" />
                     </div>
                     {/* End Product slider */}
                 </div>
