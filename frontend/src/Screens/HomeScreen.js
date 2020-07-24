@@ -94,10 +94,12 @@ function HomeScreen(props) {
                           data.products.map(product => <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                             <div className="single-product">
                               <div className="product-img">
-                                <a href="product-details.html">
+                                
+                                <Link to={'/product/' + product._id}>
                                   <img className="default-img" src={product.image} alt="#" />
                                   <img className="hover-img" src={product.image} alt="#" />
-                                </a>
+                                </Link>
+
                                 <div className="button-head">
                                   <div className="product-action">
                                     <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i className=" ti-eye" /><span>Quick Shop</span></a>

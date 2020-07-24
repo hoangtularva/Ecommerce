@@ -140,9 +140,9 @@ function App() {
         </header>
         {/*/ End Header */}
 
-
+        <Route path="/product/:id" component={ProductScreen}/>
         <Route path="/" exact={true} component={HomeScreen} />
-        {/* <Route path="/products/:id" component={ProductScreen}/> */}
+   
 
         {/* Start Shop Services Area */}
         <section className="shop-services section home">
