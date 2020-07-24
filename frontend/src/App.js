@@ -179,31 +179,21 @@ function App() {
             {/* Single Banner  */}
             <div className="col-lg-4 col-md-6 col-12">
               <div className="single-banner">
-                <img src="https://via.placeholder.com/600x370" alt="#" />
-                <div className="content">
-                  <p>Man's Collectons</p>
-                  <h3>Summer travel <br /> collection</h3>
-                  <a href="#">Discover Now</a>
-                </div>
+                <img src="https://www.mrvui.vn/Data/Sites/1/media/c%C3%A1c-h%C3%A3ng-balo-n%E1%BB%95i-ti%E1%BA%BFng/17-adidas-(3).jpg" alt="#" />
               </div>
             </div>
             {/* /End Single Banner  */}
             {/* Single Banner  */}
             <div className="col-lg-4 col-md-6 col-12">
               <div className="single-banner">
-                <img src="https://via.placeholder.com/600x370" alt="#" />
-                <div className="content">
-                  <p>Bag Collectons</p>
-                  <h3>Awesome Bag <br /> 2020</h3>
-                  <a href="#">Shop Now</a>
-                </div>
+                <img src="https://www.mrvui.vn/Data/Sites/1/media/c%C3%A1c-h%C3%A3ng-balo-n%E1%BB%95i-ti%E1%BA%BFng/c%C3%A1c-h%C3%A3ng-balo-n%E1%BB%95i-ti%E1%BA%BFng-(1).jpg" alt="#" />
               </div>
             </div>
             {/* /End Single Banner  */}
             {/* Single Banner  */}
             <div className="col-lg-4 col-12">
               <div className="single-banner tab-height">
-                <img src="https://via.placeholder.com/600x370" alt="#" />
+                <img src="https://www.mrvui.vn/Data/Sites/1/media/c%C3%A1c-h%C3%A3ng-balo-n%E1%BB%95i-ti%E1%BA%BFng/2-eastpak-(2).jpg" alt="#" />
                 <div className="content">
                   <p>Flash Sale</p>
                   <h3>Mid Season <br /> Up to <span>40%</span> Off</h3>
