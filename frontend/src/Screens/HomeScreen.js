@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 //Link data
 // import data from '../data'
 //import axios to request HTTP
-import axios from 'axios'
+//import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux';
 import { listProducts } from '../actions/productActions'
 
