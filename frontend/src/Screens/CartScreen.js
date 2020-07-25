@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { addToCart } from '../actions/cartActions';
+import { addToCart, removeFromCart } from '../actions/cartActions';
 import { useDispatch, useSelector } from 'react-redux';
 
 function CartScreen(props) {
@@ -13,11 +13,17 @@ function CartScreen(props) {
   const qty = props.location.search ? Number(props.location.search.split("=")[1]) : 1;
   const dispatch = useDispatch();
 
+  //Add cart
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty));
     }
   }, []);
+
+  //Remove cart
+  const removeFromCartHandler = (productId) => {
+    dispatch(removeFromCart(productId));
+  }
 
   return (
     <div>
@@ -44,7 +50,7 @@ function CartScreen(props) {
                   <tr>
                     <td className="image" data-title="PRODUCT"><img src={item.image} alt="#" /></td>
                     <td className="product-des" data-title="NAME">
-                    <p className="product-name"> <Link to={'/product/' + item._id}>{item.name}</Link></p>
+                    <p className="product-name"> <Link to={'/product/' + item.product}>{item.name}</Link></p>
                     <p className="product-des">Category: {item.category}</p>
                     </td>
                     <td className="price" data-title="PRICE"><span> ${item.price} </span></td>
@@ -55,7 +61,7 @@ function CartScreen(props) {
                         )}
                       </select>
                     </td>
-                    <td className="action" data-title="REMOVE"><a href="#"><i className="ti-trash remove-icon" /></a></td>
+                    <td className="action" data-title="REMOVE"><Link onClick={() => removeFromCartHandler(item.product)}><i className="ti-trash remove-icon" /></Link></td>
                   </tr>
                 </tbody>)
                 }
