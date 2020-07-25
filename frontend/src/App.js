@@ -1,12 +1,12 @@
 import React from 'react';
-import data from './data';
+// import data from './data';
 // Link route
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import './App.css';
 //Link screen
 import HomeScreen from './Screens/HomeScreen'
 import ProductScreen from './Screens/ProductScreen'
-import CartScreen from './Screens/CartSreen'
+import CartScreen from './Screens/CartScreen'
 
 function App() {
   return (

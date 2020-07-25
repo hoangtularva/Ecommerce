@@ -7,7 +7,7 @@ const initialState = {};
 const reducer = combineReducers({
     productList: productListReducer,
     productDetails: productDetailsReducer,
-    cart: cartReducer,
+    cart: cartReducer
 })
 
 const store = createStore(reducer, initialState, compose(applyMiddleware(thunk)));
