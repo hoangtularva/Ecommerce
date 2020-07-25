@@ -142,14 +142,10 @@ function App() {
         </header>
         {/*/ End Header */}
 
-       
+        <Route path="/signin" component={SigninScreen} />
         <Route path="/product/:id" component={ProductScreen}/>
         <Route path="/cart/:id?" component={CartScreen}/>
         <Route path="/" exact={true} component={HomeScreen} />
-       
-        <Route path="/signin" component={SigninScreen} />
-
-        
 
         {/* Start Shop Services Area */}
         <section className="shop-services section home">

@@ -1,10 +1,11 @@
 import express from 'express';
 import User from '../models/userModel';
+import { getToken } from '../util';
 
 const router = express.Router();
 
-//Chức năng đăng ký
-router.post('/signin', async (req, res) => {
+//Chức năng đăng nhập
+router.post("/signin", async (req, res) => {
   const signinUser = await User.findOne({
     email: req.body.email,
     password: req.body.password,

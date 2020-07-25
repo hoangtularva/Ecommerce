@@ -2,6 +2,8 @@ import express from 'express';
 import data from './data';
 //connect mongodb
 import dotenv from 'dotenv';
+//check input
+import bodyParser from 'body-parser';
 import config from './config';
 import mongoose from 'mongoose';
 import userRoute from './routes/userRoute';
@@ -18,7 +20,7 @@ mongoose.connect(mongodbURL, {
 
 //Node server
 const app = express();
-
+app.use(bodyParser.json());
 //user
 app.use("/api/users", userRoute);
 //product list
@@ -39,4 +41,4 @@ app.get("/api/products/:id", (req, res) => {
 
 });
 
-app.listen(4000, () => { console.log("Server Start http://localhost:4000") });
+app.listen(5000, () => { console.log("Server Start http://localhost:5000") });
