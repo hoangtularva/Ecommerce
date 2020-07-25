@@ -124,7 +124,7 @@ function App() {
                               </li>
                               <li><a href="#">Service</a></li>
                               <li><a href="#">Pages</a></li>
-                              <li><a href="#">Carts</a></li>
+                              <li><Link to="/cart">Carts</Link></li>
                               <li><a href="#">Checkout</a></li>
                             </ul>
                           </div>

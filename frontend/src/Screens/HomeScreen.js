@@ -28,6 +28,9 @@ function HomeScreen(props) {
     };
   }, [])
 
+    //Link to cart
+    const [qty] = useState(1);
+
   return loading ?
     <div>{/* Preloader */}
       <div className="preloader">
@@ -136,12 +139,18 @@ function HomeScreen(props) {
 
                                     <div className="button-head">
                                       <div className="product-action">
-                                        <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i className=" ti-eye" /><span>Quick Shop</span></a>
+                                        <Link  title="Quick View" to={'/product/' + product._id}>
+                                          <i className=" ti-eye" /><span>Quick Shop</span>
+                                        </Link>
                                         <a title="Wishlist" href="#"><i className=" ti-heart " /><span>Add to Wishlist</span></a>
                                         <a title="Compare" href="#"><i className="ti-bar-chart-alt" /><span>Add to Compare</span></a>
                                       </div>
                                       <div className="product-action-2">
-                                        <a title="Add to cart" href="#">Add to cart</a>
+                                      {product.countInStock > 0 ? 
+                                      <Link title="Add to cart" to={'/cart/' + product._id + "?qty=" + qty}>Add to cart</Link>
+                                      :
+                                        <div>Out stock</div>
+                                      }
                                       </div>
                                     </div>
                                   </div>
