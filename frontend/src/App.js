@@ -7,6 +7,7 @@ import './App.css';
 import HomeScreen from './Screens/HomeScreen'
 import ProductScreen from './Screens/ProductScreen'
 import CartScreen from './Screens/CartScreen'
+import SigninScreen from './Screens/SigninScreen';
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
                       <li><i className="ti-location-pin" /> Store location</li>
                       <li><i className="ti-alarm-clock" /> <a href="#">Daily deal</a></li>
                       <li><i className="ti-user" /> <a href="#">My account</a></li>
-                      <li><i className="ti-power-off" /><a href="login.html#">Login</a></li>
+                      <li><i className="ti-power-off" /><Link to="/signin">Sign In</Link></li>
                     </ul>
                   </div>
                   {/* End Top Right */}
@@ -141,10 +142,14 @@ function App() {
         </header>
         {/*/ End Header */}
 
+       
         <Route path="/product/:id" component={ProductScreen}/>
         <Route path="/cart/:id?" component={CartScreen}/>
         <Route path="/" exact={true} component={HomeScreen} />
+       
+        <Route path="/signin" component={SigninScreen} />
 
+        
 
         {/* Start Shop Services Area */}
         <section className="shop-services section home">
