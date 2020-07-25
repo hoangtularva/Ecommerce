@@ -68,7 +68,7 @@ export default {
             category: "Jansport",
             rating: 3.5,
             numReviews: 24,
-            countInStock: 4 
+            countInStock: 0
         },
         {
             _id: "8",
