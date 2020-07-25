@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { addToCart } from '../actions/cartActions';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -31,10 +32,9 @@ function CartScreen(props) {
                   <tr className="main-hading">
                     <th>PRODUCT</th>
                     <th>NAME</th>
-                    <th className="text-center">PRICE</th>
+                    <th>PRICE</th>
                     <th className="text-center">QUANTITY</th>
-                    <th className="text-center">TOTAL</th>
-                    <th className="text-center"><i className="ti-trash remove-icon" /></th>
+                    <th className="text-center">REMOVE</th>
                   </tr>
                 </thead>
                 {
@@ -42,21 +42,20 @@ function CartScreen(props) {
                   :
                   cartItems.map(item => <tbody>
                   <tr>
-                    <td className="image" data-title="No"><img src={item.image} alt="#" /></td>
-                    <td className="product-des" data-title="Description">
-                    <p className="product-name"><a href="#">{item.name}</a></p>
+                    <td className="image" data-title="PRODUCT"><img src={item.image} alt="#" /></td>
+                    <td className="product-des" data-title="NAME">
+                    <p className="product-name"> <Link to={'/product/' + item._id}>{item.name}</Link></p>
                     <p className="product-des">Category: {item.category}</p>
                     </td>
-                    <td className="price" data-title="Price"><span> {item.price} </span></td>
-                    <td className="qty" data-title="Qty">
-                      <select>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                    <td className="price" data-title="PRICE"><span> ${item.price} </span></td>
+                    <td className="qty" data-title="QUANTITY">
+                      <select value={item.qty} onChange={(e) => dispatch(addToCart(item.product, e.target.value))}>
+                        {[...Array(item.countInStock).keys()].map(x =>
+                          <option key={x + 1} value={x + 1}>{x + 1}</option>
+                        )}
                       </select>
                     </td>
-                    <td className="total-amount" data-title="Total"><span>$220.88</span></td>
-                    <td className="action" data-title="Remove"><a href="#"><i className="ti-trash remove-icon" /></a></td>
+                    <td className="action" data-title="REMOVE"><a href="#"><i className="ti-trash remove-icon" /></a></td>
                   </tr>
                 </tbody>)
                 }
@@ -73,14 +72,12 @@ function CartScreen(props) {
                   <div className="col-lg-4 col-md-7 col-12">
                     <div className="right">
                       <ul>
-                        <li>Cart Subtotal<span>$330.00</span></li>
+                        <li>Cart Subtotal<span>${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}</span></li>
                         <li>Shipping<span>Free</span></li>
-                        <li>You Save<span>$20.00</span></li>
-                        <li className="last">You Pay<span>$310.00</span></li>
                       </ul>
                       <div className="button5">
                         <a href="#" className="btn">Checkout</a>
-                        <a href="#" className="btn">Continue shopping</a>
+                        <Link to="/" className="btn">Continue shopping</Link>
                       </div>
                     </div>
                   </div>
