@@ -25,6 +25,11 @@ function CartScreen(props) {
     dispatch(removeFromCart(productId));
   }
 
+  //Checkout
+  const checkoutHandler = () => {
+    props.history.push("/signin?redirect=shipping");
+  }
+
   return (
     <div>
       {/* Shopping Cart */}
@@ -82,7 +87,7 @@ function CartScreen(props) {
                         <li>Shipping<span>Free</span></li>
                       </ul>
                       <div className="button5">
-                        <a href="#" className="btn">Checkout</a>
+                        <button onClick={checkoutHandler} className="btn" disabled={cartItems.length === 0}>Checkout</button>
                         <Link to="/" className="btn">Continue shopping</Link>
                       </div>
                     </div>

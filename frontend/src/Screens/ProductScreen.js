@@ -71,7 +71,7 @@ function ProductScreen(props) {
                                        
                                     </div>
                                 </div>
-                                <h3>{product.price}</h3>
+                                <h3>${product.price}</h3>
                                 <div className="quickview-peragraph">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui nemo ipsum numquam.</p>
                                 </div>
