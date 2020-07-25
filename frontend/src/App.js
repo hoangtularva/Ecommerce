@@ -8,8 +8,15 @@ import HomeScreen from './Screens/HomeScreen'
 import ProductScreen from './Screens/ProductScreen'
 import CartScreen from './Screens/CartScreen'
 import SigninScreen from './Screens/SigninScreen';
+import { useSelector } from 'react-redux';
+import RegisterScreen from './Screens/RegisterScreen';
 
 function App() {
+
+  //view profile and role admin
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+
   return (
     <BrowserRouter>
       <div>
@@ -36,8 +43,14 @@ function App() {
                     <ul className="list-main">
                       <li><i className="ti-location-pin" /> Store location</li>
                       <li><i className="ti-alarm-clock" /> <a href="#">Daily deal</a></li>
-                      <li><i className="ti-user" /> <a href="#">My account</a></li>
-                      <li><i className="ti-power-off" /><Link to="/signin">Sign In</Link></li>
+                      <li><i className="ti-user" /> <Link to="/profile">My Account</Link></li>
+                      <li><i className="ti-power-off" />
+                        {userInfo ? (
+                          <Link to="/profile">{userInfo.name}</Link>
+                        ) : (
+                            <Link to="/signin">Sign In</Link>
+                          )}
+                      </li>
                     </ul>
                   </div>
                   {/* End Top Right */}
@@ -142,9 +155,10 @@ function App() {
         </header>
         {/*/ End Header */}
 
+        <Route path="/register" component={RegisterScreen} />
         <Route path="/signin" component={SigninScreen} />
-        <Route path="/product/:id" component={ProductScreen}/>
-        <Route path="/cart/:id?" component={CartScreen}/>
+        <Route path="/product/:id" component={ProductScreen} />
+        <Route path="/cart/:id?" component={CartScreen} />
         <Route path="/" exact={true} component={HomeScreen} />
 
         {/* Start Shop Services Area */}
