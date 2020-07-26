@@ -1,13 +1,22 @@
 import express from 'express';
 import Product from '../models/productModel';
 
-
 const router = express.Router();
 
 //All
 router.get("/", async (req, res) => {
   const products = await Product.find({});
   res.send(products);
+});
+
+//Lay id bi ma hoa
+router.get('/:id', async (req, res) => {
+  const product = await Product.findOne({ _id: req.params.id });
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send({ message: 'Product Not Found.' });
+  }
 });
 
 //Update

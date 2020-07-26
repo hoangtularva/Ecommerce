@@ -44,14 +44,24 @@ function App() {
                     <ul className="list-main">
                       <li><i className="ti-location-pin" /> Store location</li>
                       <li><i className="ti-alarm-clock" /> <a href="#">Daily deal</a></li>
-                      <li><i className="ti-user" /> <Link to="/profile">My Account</Link></li>
-                      <li><i className="ti-power-off" />
+                      <li><i className="ti-user" />
                         {userInfo ? (
                           <Link to="/profile">{userInfo.name}</Link>
                         ) : (
                             <Link to="/signin">Sign In</Link>
                           )}
                       </li>
+                      <li><i className="ti-power-off" />
+
+                      </li>
+                      {/* Role user and admin */}
+                      {userInfo && userInfo.isAdmin && (
+                        <li>
+                          Admin: 
+                          <Link to="/products"> Manage Products</Link>
+                        </li>
+                      )}
+
                     </ul>
                   </div>
                   {/* End Top Right */}

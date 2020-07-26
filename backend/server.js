@@ -1,5 +1,5 @@
 import express from 'express';
-import data from './data';
+// import data from './data';
 //connect mongodb
 import dotenv from 'dotenv';
 //check input
@@ -33,7 +33,7 @@ app.use('/api/products', productRoute);
 //     res.send(data.products);
 // });
 
-//product details
+// product details
 // app.get("/api/products/:id", (req, res) => {
 //     const productID = req.params.id;
 //     const product = data.products.find(x => x._id === productID);
@@ -43,7 +43,6 @@ app.use('/api/products', productRoute);
 //     else {
 //         res.status(404).send({ msg: "Error!!" });
 //     }
-
 // });
 
 app.listen(5000, () => { console.log("Server Start http://localhost:5000") });
