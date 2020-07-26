@@ -12,6 +12,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import RegisterScreen from './Screens/RegisterScreen';
 import ProductsScreen from './Screens/ProductsScreen';
 import { logout } from './actions/userActions';
+import ShippingScreen from './Screens/ShippingScreen';
+import PaymentScreen from './Screens/PaymentScreen';
 
 function App() {
 
@@ -128,6 +130,8 @@ function App() {
         </header>
         {/*/ End Header */}
 
+        <Route path="/payment" component={PaymentScreen} />
+        <Route path="/shipping" component={ShippingScreen} />
         <Route path="/category/:id" component={HomeScreen} />
         <Route path="/products" component={ProductsScreen} />
         <Route path="/register" component={RegisterScreen} />
