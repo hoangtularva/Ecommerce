@@ -15,7 +15,7 @@ function SigninScreen(props) {
 
     useEffect(() => {
         if (userInfo) {
-             props.history.push(redirect);
+            props.history.push(redirect);
         }
         return () => {
             //
@@ -32,13 +32,23 @@ function SigninScreen(props) {
                 <div className="container">
                     <div className="checkout-form">
                         <h2>Sign-In</h2>
-                       
+
                         {/* Form */}
                         <form className="form" onSubmit={submitHandler}>
-                        <h4>
-                            {loading && <div>Loading...</div>}
-                             {error && <div>{error}</div>}
-                        </h4>
+                            <h4>
+                                {loading && <div>{/* Preloader */}
+                                    <div className="preloader">
+                                        <div className="preloader-inner">
+                                            <div className="preloader-icon">
+                                                <span />
+                                                <span />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* End Preloader */}
+                                </div>}
+                                {error && <div>{error}</div>}
+                            </h4>
                             <div className="row">
                                 <div className="col-lg-7 col-md-6 col-6">
                                     <div className="form-group">

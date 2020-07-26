@@ -37,7 +37,17 @@ function RegisterScreen(props) {
             {/* Form */}
             <form className="form" onSubmit={submitHandler}>
               <h4>
-                {loading && <div>Loading...</div>}
+                {loading && <div>{/* Preloader */}
+                  <div className="preloader">
+                    <div className="preloader-inner">
+                      <div className="preloader-icon">
+                        <span />
+                        <span />
+                      </div>
+                    </div>
+                  </div>
+                  {/* End Preloader */}
+                </div>}
                 {error && <div>{error}</div>}
               </h4>
               <div className="row">
@@ -48,7 +58,7 @@ function RegisterScreen(props) {
                     <input type="name" id="name" name="name" onChange={(e) => setName(e.target.value)} />
                   </div>
                 </div>
-                
+
                 <div className="col-lg-7 col-md-6 col-6">
                   <div className="form-group">
                     <label>Email<span>*</span></label>
