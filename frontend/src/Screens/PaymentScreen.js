@@ -35,13 +35,13 @@ function PaymentScreen(props) {
                                         <h2>Payments</h2>
                                         <div className="content">
                                             <div className="checkbox">
-                                                <input type="radio" name="paymentMethod" id="paymentMethod" value="master cart" onChange={(e) => setPaymentMethod(e.target.value)}></input> Master Cart
+                                                <input type="radio" name="paymentMethod" id="paymentMethod" value="Master Cart" onChange={(e) => setPaymentMethod(e.target.value)}></input> Master Cart
                                             </div>
                                             <div className="checkbox">
-                                                <input type="radio" name="paymentMethod" id="paymentMethod" value="visa" onChange={(e) => setPaymentMethod(e.target.value)}></input> Visa
+                                                <input type="radio" name="paymentMethod" id="paymentMethod" value="Visa" onChange={(e) => setPaymentMethod(e.target.value)}></input> Visa
                                             </div>
                                             <div className="checkbox">
-                                                <input type="radio" name="paymentMethod" id="paymentMethod" value="paypal" onChange={(e) => setPaymentMethod(e.target.value)}></input> PayPal
+                                                <input type="radio" name="paymentMethod" id="paymentMethod" value="Paypal" onChange={(e) => setPaymentMethod(e.target.value)}></input> PayPal
                                             </div>
                                         </div>
                                     </div>
