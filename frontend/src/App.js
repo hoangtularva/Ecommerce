@@ -8,15 +8,21 @@ import HomeScreen from './Screens/HomeScreen'
 import ProductScreen from './Screens/ProductScreen'
 import CartScreen from './Screens/CartScreen'
 import SigninScreen from './Screens/SigninScreen';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import RegisterScreen from './Screens/RegisterScreen';
 import ProductsScreen from './Screens/ProductsScreen';
+import { logout } from './actions/userActions';
 
 function App() {
 
   //view profile and role admin
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
+  
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logout());
+  }
 
   return (
     <BrowserRouter>
@@ -51,9 +57,10 @@ function App() {
                             <Link to="/signin">Sign In</Link>
                           )}
                       </li>
+                      {userInfo &&
                       <li><i className="ti-power-off" />
-
-                      </li>
+                          <Link onClick={handleLogout}>Logout</Link>
+                      </li>}
                       {/* Role user and admin */}
                       {userInfo && userInfo.isAdmin && (
                         <li>
