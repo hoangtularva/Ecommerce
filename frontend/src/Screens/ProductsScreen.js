@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
-    saveProduct, listProducts
+    saveProduct, listProducts, deleteProduct
 } from '../actions/productActions';
 
 function ProductsScreen(props) {
@@ -25,15 +25,25 @@ function ProductsScreen(props) {
     //Create
     const productSave = useSelector((state) => state.productSave);
     const { loading: loadingSave, success: successSave, error: errorSave } = productSave;
+    //Delete
+    const productDelete = useSelector((state) => state.productDelete);
+    const {
+        loading: loadingDelete,
+        success: successDelete,
+        error: errorDelete,
+    } = productDelete;
 
     const dispatch = useDispatch();
 
     useEffect(() => {
+        if (successSave) {
+            setModalVisible(false);
+        }
         dispatch(listProducts());
         return () => {
             //
         };
-    }, []);
+    }, [successSave, successDelete]);
 
     //Modal
     const openModal = (product) => {
@@ -46,8 +56,9 @@ function ProductsScreen(props) {
         setBrand(product.brand);
         setCategory(product.category);
         setCountInStock(product.countInStock);
-      };
+    };
 
+    //Save and update
     const submitHandler = (e) => {
         e.preventDefault();
         dispatch(
@@ -62,6 +73,10 @@ function ProductsScreen(props) {
                 description,
             })
         );
+    };
+    //delete
+    const deleteHandler = (product) => {
+        dispatch(deleteProduct(product._id));
     };
 
     return (
@@ -184,7 +199,7 @@ function ProductsScreen(props) {
                                                 <button onClick={() => openModal(product)} className="btn" >
                                                     Edit
                                                 </button>{' '}
-                                                <button className="btn" >
+                                                <button onClick={() => deleteHandler(product)} className="btn" >
                                                     Delete
                                                  </button>
                                             </td>
