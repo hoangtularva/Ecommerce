@@ -14,6 +14,7 @@ import ProductsScreen from './Screens/ProductsScreen';
 import { logout } from './actions/userActions';
 import ShippingScreen from './Screens/ShippingScreen';
 import PaymentScreen from './Screens/PaymentScreen';
+import PlaceOrderScreen from './Screens/PlaceOrderScreen';
 
 function App() {
 
@@ -130,6 +131,7 @@ function App() {
         </header>
         {/*/ End Header */}
 
+        <Route path="/placeorder" component={PlaceOrderScreen} />
         <Route path="/payment" component={PaymentScreen} />
         <Route path="/shipping" component={ShippingScreen} />
         <Route path="/category/:id" component={HomeScreen} />
