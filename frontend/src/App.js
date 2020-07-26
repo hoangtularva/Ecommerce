@@ -10,6 +10,7 @@ import CartScreen from './Screens/CartScreen'
 import SigninScreen from './Screens/SigninScreen';
 import { useSelector } from 'react-redux';
 import RegisterScreen from './Screens/RegisterScreen';
+import ProductsScreen from './Screens/ProductsScreen';
 
 function App() {
 
@@ -155,6 +156,7 @@ function App() {
         </header>
         {/*/ End Header */}
 
+        <Route path="/products" component={ProductsScreen} />
         <Route path="/register" component={RegisterScreen} />
         <Route path="/signin" component={SigninScreen} />
         <Route path="/product/:id" component={ProductScreen} />
