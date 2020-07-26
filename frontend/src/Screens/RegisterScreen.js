@@ -82,7 +82,7 @@ function RegisterScreen(props) {
           </div>
         </div>
       </section>
-      {/*/ End Checkout */}
+      {/*/ End Register */}
 
     </div>
   );

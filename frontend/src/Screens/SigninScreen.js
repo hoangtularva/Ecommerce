@@ -66,7 +66,7 @@ function SigninScreen(props) {
                     </div>
                 </div>
             </section>
-            {/*/ End Checkout */}
+            {/*/ End Signin */}
 
         </div>
     );

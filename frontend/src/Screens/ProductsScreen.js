@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
-    saveProduct
+    saveProduct, listProducts
 } from '../actions/productActions';
 
 function ProductsScreen(props) {
@@ -14,18 +14,18 @@ function ProductsScreen(props) {
     const [category, setCategory] = useState('');
     const [countInStock, setCountInStock] = useState('');
     const [description, setDescription] = useState('');
+    //Show list
+    const productList = useSelector((state) => state.productList);
+    const { loading, products, error } = productList;
 
+    //Create
     const productSave = useSelector((state) => state.productSave);
-    const {
-        loading: loadingSave,
-        success: successSave,
-        error: errorSave,
-    } = productSave;
+    const { loading: loadingSave, success: successSave, error: errorSave } = productSave;
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-
+        dispatch(listProducts());
         return () => {
             //
         };
@@ -48,7 +48,14 @@ function ProductsScreen(props) {
 
     return (
 
-        <div className="content content-margined">
+        <div>
+            <div className="product-header">
+                <h3>Products</h3>
+                <button className="btn">
+                    Create Product</button>
+            </div>
+
+            {/* Create product */}
             <section className="shop checkout section">
                 <div className="container">
                     <div className="checkout-form">
@@ -57,7 +64,14 @@ function ProductsScreen(props) {
                         {/* Form */}
                         <form className="form" onSubmit={submitHandler}>
                             <h4>
-                                {loadingSave && <div>Loading...</div>}
+                                {loadingSave && <div className="preloader">
+                                    <div className="preloader-inner">
+                                        <div className="preloader-icon">
+                                            <span />
+                                            <span />
+                                        </div>
+                                    </div>
+                                </div>}
                                 {errorSave && <div>{errorSave}</div>}
                             </h4>
                             <div className="row">
@@ -86,7 +100,7 @@ function ProductsScreen(props) {
                                 <div className="col-lg-7 col-md-6 col-6">
                                     <div className="form-group">
                                         <label htmlFor="brand">Brand</label>
-                                        <input type="text" name="brand" value={brand} id="brand"onChange={(e) => setBrand(e.target.value)}></input>
+                                        <input type="text" name="brand" value={brand} id="brand" onChange={(e) => setBrand(e.target.value)}></input>
                                     </div>
                                 </div>
 
@@ -120,7 +134,50 @@ function ProductsScreen(props) {
                     </div>
                 </div>
             </section>
-            {/*/ End Checkout */}
+            {/*/ End Create Product */}
+
+            {/* Product List */}
+            <div className="shopping-cart section">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <table className="table shopping-summery">
+                                <thead>
+                                    <tr className="main-hading">
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Category</th>
+                                        <th>Brand</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {products.map((product) => (
+                                        <tr key={product._id}>
+                                            <td>{product._id}</td>
+                                            <td>{product.name}</td>
+                                            <td>{product.price}</td>
+                                            <td>{product.category}</td>
+                                            <td>{product.brand}</td>
+                                            <td>
+                                                <button className="btn" >
+                                                    Edit
+                                                </button>{' '}
+                                                <button
+                                                    className="btn" >
+                                                    Delete
+                                                 </button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/*/ End Product List */}
 
         </div>
     );
