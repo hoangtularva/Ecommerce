@@ -52,7 +52,7 @@ function ProductsScreen(props) {
         e.preventDefault();
         dispatch(
             saveProduct({
-                id,
+                _id: id,
                 name,
                 price,
                 image,
