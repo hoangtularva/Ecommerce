@@ -12,12 +12,15 @@ function HomeScreen(props) {
 
   //Fetch Server Data 
   // const [products, setProduct] = useState([]);
-  const productList = useSelector(state => state.productList);
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const [sortOrder, setSortOrder] = useState('');
+  const category = props.match.params.id ? props.match.params.id : '';
+  const productList = useSelector((state) => state.productList);
   const { products, loading, error } = productList;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(listProducts());
+    dispatch(listProducts(category));
     // const fetchData = async () => {
     //   const {data} = await axios.get("/api/products");
     //   setProduct(data);
@@ -26,10 +29,19 @@ function HomeScreen(props) {
     return () => {
       //
     };
-  }, [])
+  }, [category])
 
-    //Link to cart
-    const [qty] = useState(1);
+  //Link to cart
+  const [qty] = useState(1);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(listProducts(category, searchKeyword, sortOrder));
+  };
+  const sortHandler = (e) => {
+    setSortOrder(e.target.value);
+    dispatch(listProducts(category, searchKeyword, sortOrder));
+  };
 
   return loading ?
     <div>{/* Preloader */}
@@ -45,6 +57,7 @@ function HomeScreen(props) {
     </div> : error ? <div> {error} </div> :
       (
         <div>
+
           {/* Slider Area */}
           <section className="hero-slider">
             {/* Single Slider */}
@@ -107,12 +120,33 @@ function HomeScreen(props) {
           </section>
           {/* End Small Banner */}
 
+          <div className="container">
+            <div className="row">
+              <div className="col-md-7">
+               <div>SEACRH PRODUCT: </div> 
+                <form onSubmit={submitHandler}>
+                  <input placeholder="Search product here..." name="search" className="form-control" name="searchKeyword" onChange={(e) => setSearchKeyword(e.target.value)} />
+                  <button className="btn" value="search" type="submit"><i class="ti-search"></i></button>
+                </form>
+              </div>
+              <div className="col-md-3">
+                SORT PRODUCT BY: {' '}
+                <select className="form-control" name="sortOrder" onChange={sortHandler}>
+                  <option value="">Newest</option>
+                  <option value="lowest">Lowest</option>
+                  <option value="highest">Highest</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
           {/* Start Product Area */}
           <div className="product-area section">
             <div className="container">
               <div className="row">
                 <div className="col-12">
                   <div className="section-title">
+                    {category && <h2>Category: {category}</h2>}
                     <h2>Products List</h2>
                   </div>
                 </div>
@@ -139,18 +173,18 @@ function HomeScreen(props) {
 
                                     <div className="button-head">
                                       <div className="product-action">
-                                        <Link  title="Quick View" to={'/product/' + product._id}>
+                                        <Link title="Quick View" to={'/product/' + product._id}>
                                           <i className=" ti-eye" /><span>Quick Shop</span>
                                         </Link>
                                         <a title="Wishlist" href="#"><i className=" ti-heart " /><span>Add to Wishlist</span></a>
                                         <a title="Compare" href="#"><i className="ti-bar-chart-alt" /><span>Add to Compare</span></a>
                                       </div>
                                       <div className="product-action-2">
-                                      {product.countInStock > 0 ? 
-                                      <Link title="Add to cart" to={'/cart/' + product._id + "?qty=" + qty}>Add to cart</Link>
-                                      :
-                                        <div>Out stock</div>
-                                      }
+                                        {product.countInStock > 0 ?
+                                          <Link title="Add to cart" to={'/cart/' + product._id + "?qty=" + qty}>Add to cart</Link>
+                                          :
+                                          <div>Out stock</div>
+                                        }
                                       </div>
                                     </div>
                                   </div>
@@ -159,8 +193,8 @@ function HomeScreen(props) {
                                     <div className="product-price">
                                       <span>${product.price}</span>
                                     </div>
-                                    <div class="product-brand">{product.brand}</div>
-                                    <div class="product-rating">{product.rating} Stars ({product.numReviews})</div>
+                                    <div class="product-brand">{product.category}</div>
+                                    <div class="product-rating">{product.rating} Stars ({product.numReviews} Reviews)</div>
                                   </div>
                                 </div>
                               </div>
