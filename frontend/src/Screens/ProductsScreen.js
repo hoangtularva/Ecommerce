@@ -140,7 +140,7 @@ function ProductsScreen(props) {
 
                                     <div className="col-lg-7 col-md-6 col-6">
                                         <div className="form-group">
-                                            <label htmlFor="countInStock">CountInStock</label>
+                                            <label htmlFor="countInStock">Count In Stock</label>
                                             <input type="text" name="countInStock" value={countInStock} id="countInStock" onChange={(e) => setCountInStock(e.target.value)}></input>
                                         </div>
                                     </div>
