@@ -183,7 +183,7 @@ function ProductsScreen(props) {
                                         <th>Name</th>
                                         <th>Price</th>
                                         <th>Category</th>
-                                        <th>Brand</th>
+                                        <th>Count In Stock</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -194,7 +194,7 @@ function ProductsScreen(props) {
                                             <td data-title="NAME">{product.name}</td>
                                             <td data-title="PRICE">{product.price}</td>
                                             <td data-title="CATEGORY">{product.category}</td>
-                                            <td data-title="BRAND">{product.brand}</td>
+                                            <td data-title="COUNTINSTOCK">{product.countInStock}</td>
                                             <td data-title="ACTION">
                                                 <button onClick={() => openModal(product)} className="btn" >
                                                     Edit

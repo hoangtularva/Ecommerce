@@ -135,7 +135,11 @@ function App() {
         <Route path="/payment" component={PaymentScreen} />
         <Route path="/shipping" component={ShippingScreen} />
         <Route path="/category/:id" component={HomeScreen} />
-        <Route path="/products" component={ProductsScreen} />
+        
+        {/* Role Admin */}
+        {userInfo && userInfo.isAdmin ? 
+        <Route path="/products" component={ProductsScreen} />:""}
+                      
         <Route path="/register" component={RegisterScreen} />
         <Route path="/signin" component={SigninScreen} />
         <Route path="/product/:id" component={ProductScreen} />
