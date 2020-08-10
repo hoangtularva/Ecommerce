@@ -105,7 +105,7 @@ function App() {
                               <li><a href="#">Categories<i className="ti-angle-down" /></a>
                                 <ul className="dropdown">
                                   <li><Link to="/category/Adidas">Adidas</Link></li>
-                                  <li><Link to="/category/Pants">Crumpler</Link></li>
+                                  <li><Link to="/category/Crumpler">Crumpler</Link></li>
                                   <li><Link to="/category/Nike">Nike</Link></li>
                                   <li><Link to="/category/Jansport">Jansport</Link></li>
                                 </ul>
