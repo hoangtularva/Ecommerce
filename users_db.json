@@ -1,0 +1,10 @@
+{"_id":{"$oid":"5f1c3285efd47718f4ecafdd"},"isAdmin":true,"name":"HoangTu","email":"hoangtu@gmail.com","password":"1234","__v":0}
+{"_id":{"$oid":"5f1c36710967c22e78762398"},"isAdmin":true,"name":"HoangTu","email":"hoangtukg295@gmail.com","password":"1234","__v":0}
+{"_id":{"$oid":"5f1c367a98b3da1654174eb2"},"isAdmin":true,"name":"HoangTu","email":"hoangtukg@gmail.com","password":"1234","__v":0}
+{"_id":{"$oid":"5f1c36b05aa3a80a8c511e44"},"isAdmin":true,"name":"HoangTu","email":"hoangtukg25@gmail.com","password":"1234","__v":0}
+{"_id":{"$oid":"5f1c7941c0cd8928ecaf991a"},"isAdmin":true,"name":"HoangTu","email":"hoangtu123@gmail.com","password":"1234","__v":0}
+{"_id":{"$oid":"5f1c9060bf61142ebcdeb00c"},"isAdmin":false,"name":"Tu","email":"tuhoang@gmail.com","password":"12345","__v":0}
+{"_id":{"$oid":"5f1ce6776443ca3380a4e0f9"},"isAdmin":false,"name":"Tu","email":"test@gmail.com","password":"1234","__v":0}
+{"_id":{"$oid":"5f1d56d5bfa96d2e00e8efdf"},"isAdmin":false,"name":"Tu","email":"testship@gmail.com","password":"1234","__v":0}
+{"_id":{"$oid":"5f1d67a3bfa96d2e00e8efe0"},"isAdmin":false,"name":"THT","email":"testship123@gmail.com","password":"1234","__v":0}
+{"_id":{"$oid":"5f1d9b41d4074a056cba699e"},"isAdmin":false,"name":"Hoang Tu","email":"hoangtu@test.com","password":"12345","__v":0}

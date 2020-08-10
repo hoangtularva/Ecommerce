@@ -15,6 +15,9 @@ import { logout } from './actions/userActions';
 import ShippingScreen from './Screens/ShippingScreen';
 import PaymentScreen from './Screens/PaymentScreen';
 import PlaceOrderScreen from './Screens/PlaceOrderScreen';
+import OrdersScreen from './Screens/OrdersScreen';
+import OrderScreen from './Screens/OrderScreen';
+import ProfileScreen from './Screens/ProfileScreen';
 
 function App() {
 
@@ -62,15 +65,10 @@ function App() {
                       </li>
                       {userInfo &&
                       <li><i className="ti-power-off" />
-                          <Link onClick={handleLogout}>Logout</Link>
+                          <Link to={handleLogout}>Logout</Link>
                       </li>}
                       {/* Role user and admin */}
-                      {userInfo && userInfo.isAdmin && (
-                        <li>
-                          Admin: 
-                          <Link to="/products"> Manage Products</Link>
-                        </li>
-                      )}
+                   
 
                     </ul>
                   </div>
@@ -116,6 +114,16 @@ function App() {
                               <li><a href="/">Pages</a></li>
                               <li><Link to="/">Contact</Link></li>
                               <li><Link to="/cart">Carts</Link></li>
+                              {userInfo && userInfo.isAdmin && (
+                              <li><a href="#">Admin<i className="ti-angle-down" /></a>
+                                <ul className="dropdown">
+                                <li><Link to="/products"> Manage Products</Link></li>
+                                <li><Link to="/orders"> Orders</Link></li>
+                                
+                                <li><Link onClick={handleLogout}>Logout</Link></li>
+                                </ul>
+                              </li>
+                                )}      
                             </ul>
                           </div>
                         </div>
@@ -130,7 +138,7 @@ function App() {
           {/*/ End Header Inner */}
         </header>
         {/*/ End Header */}
-
+       
         <Route path="/placeorder" component={PlaceOrderScreen} />
         <Route path="/payment" component={PaymentScreen} />
         <Route path="/shipping" component={ShippingScreen} />
@@ -139,6 +147,10 @@ function App() {
         {/* Role Admin */}
         {userInfo && userInfo.isAdmin ? 
         <Route path="/products" component={ProductsScreen} />:""}
+         <Route path="/orders" component={OrdersScreen} />
+         <Route path="/profile" component={ProfileScreen} />
+         
+        <Route path="/order/:id" component={OrderScreen} />
                       
         <Route path="/register" component={RegisterScreen} />
         <Route path="/signin" component={SigninScreen} />

@@ -1,5 +1,6 @@
 import express from 'express';
 import Product from '../models/productModel';
+import { isAuth, isAdmin } from '../util';
 
 const router = express.Router();
 
@@ -41,7 +42,7 @@ router.get('/:id', async (req, res) => {
 });
 
 //Update
-router.put("/:id", async (req, res) => {
+router.put('/:id', isAuth, isAdmin, async (req, res) => {
   const productId = req.params.id;
   const product = await Product.findById(productId);
   if (product) {
@@ -63,7 +64,7 @@ router.put("/:id", async (req, res) => {
 });
 
 //Create
-router.post("/", async (req, res) => {
+router.post('/', isAuth, isAdmin, async (req, res) => {
   const product = new Product({
     name: req.body.name,
     price: req.body.price,
@@ -85,7 +86,7 @@ router.post("/", async (req, res) => {
 });
 
 //delete
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', isAuth, isAdmin, async (req, res) => {
   const deletedProduct = await Product.findById(req.params.id);
   if (deletedProduct) {
     await deletedProduct.remove();
@@ -94,5 +95,4 @@ router.delete("/:id", async (req, res) => {
     res.send('Error in Deletion.');
   }
 });
-
 export default router;
